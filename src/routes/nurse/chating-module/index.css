@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.chat-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid gray;
+  margin: 40px;
+  border-radius: 15px;
+  background-color: #eeeeee;
+  /* background: #ffbb5659; */
+  max-width: 650px;
+  overflow-wrap: anywhere;
+}
+.title {
+  padding: 20px;
+  color: darkred;
+}
+.connected {
+  color: green;
+}
+.connecting {
+  color: orange;
+}
+
+.disconnected {
+  color: red;
+}
+
+.disconnecting {
+  color: blue;
+}
+
+.chat-content{
+  overflow-y: auto;
+  height: 111px;
+  width:65%;
+}
+.chat-input{
+  width: 65%;
+  padding:5px;
+  margin-right: 5px;
+}
+.chat-button{
+  background: linear-gradient( 
+  229.34deg, #00F2C3 8.35%, #0098F0 89.61%);
+  border-radius: 6px;
+  border: 1px solid #0098F0;
+  padding: 7px;
+  width: 70px;
+}
+.chat-form{
+  margin-bottom:5px;
+}
+.chat-h3{
+  margin:10px;
+  overflow-wrap: anywhere;
+}

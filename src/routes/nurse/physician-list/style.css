@@ -1,0 +1,66 @@
+.PatientDetailContainer {
+	min-width: 80%;
+    background: #1e2024;
+    padding: 40px;
+    border-radius: 5px;
+}
+.textArea {
+	width: 100% !important;
+    height: 350px !important;
+    border: 1px solid lightgray;
+    background: transparent;
+    color: white;
+}
+.buttonContainer {
+	display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.buttonStyle {
+	margin-right: 5px;
+}
+
+.datatab{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.heading{
+ color: white;
+ width: 28%;
+ font-weight: bold;
+ }
+ 
+ .info{
+ color: azure;
+ padding-left: 10px;
+ }
+ 
+.p_img{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.p_image{
+    height: 75px;
+    width: 150px; 
+}
+.counseling-msg{
+    color: white;
+    margin-bottom: 80px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+.border-Bottom{
+    border-bottom: 1px solid white;
+}
+.counseling-heading{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 22px;
+}

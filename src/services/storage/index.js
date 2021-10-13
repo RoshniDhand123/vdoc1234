@@ -1,0 +1,35 @@
+import {parseToken } from "../helper";
+
+export const setItem = (key,value) => {
+    localStorage.setItem(key,JSON.stringify(value))
+}
+
+export const getItem = (key) => {
+    let value = localStorage.getItem(key)
+    if(value) return JSON.parse(value)
+    return null
+}
+
+export const clearStorage = () =>{
+    localStorage.clear()
+}
+
+export const saveUser = (jwtToken) =>{
+    setItem("token",jwtToken)
+}
+
+export const getUser = () =>{
+    let token = getItem("token")
+    if(token)  return parseToken(token)
+    else return null
+}
+
+export const getToken = () =>{
+    let token = getItem("token")
+    console.log(token,'token')
+    if(token) return token.access_token
+    else return null
+
+}
+
+

@@ -1,0 +1,11 @@
+@import "../../theme/colors.scss";
+
+.heading {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 70px;
+  letter-spacing: 0.4375px;
+  color: $color-secondary;
+  font-weight: bold;
+  position: absolute;
+}
