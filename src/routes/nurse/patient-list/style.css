@@ -1,0 +1,97 @@
+.PatientDetailContainer {
+	min-width: 80%;
+    background: #1e2024;
+    /* padding-left: 40px;
+    padding-right: 20px;
+    padding-bottom: 60px;
+    padding-top: 240px; */
+    padding:40px;
+    border-radius: 5px;
+}
+.textArea {
+	width: 100% !important;
+    height: 350px !important;
+    border: 1px solid lightgray;
+    background: transparent;
+    color: white;
+}
+.buttonContainer {
+	display: flex;
+    justify-content: end;
+    margin-top: 15px;
+}
+.dropDown-heading{
+    text-align: center;
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.buttonStyle {
+	margin-right: 5px;
+}
+.outer-container{
+    padding-top: 30px;
+    border-bottom: 1px solid white;
+}
+
+.datatab{
+
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.heading{
+color: white;
+width: 27%;
+font-weight: bold;
+}
+
+.main-heading{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+    margin: 20px 0px;
+    margin-top: 100px;
+}
+
+.info{
+color: azure;
+padding-left: 10px;
+}
+
+.p_img{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+.p_image{
+    height: 75px;
+    width: auto; 
+}
+
+#physicianSelect{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#categoryDropdown{
+
+    height: 40px;
+    width: 200px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#specialityDropdown{
+    height: 40px;
+    width: 300px;
+    font-size: 16px;
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
