@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo, useRef } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import "./index.css";
-const socketUrl = "ws://vdoc.ellocent.com/uui";
+const socketUrl = "ws://45.79.127.100:8001/uui";
 const WebSocketDemo = () => {
   //Public API that will echo messages sent to it back to the client
   const messageHistory = useRef([]);
