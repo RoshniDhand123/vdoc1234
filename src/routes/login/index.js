@@ -16,17 +16,26 @@ class Login extends React.PureComponent {
     }
 
     doSignin = async (payload) => {
+        console.log("sign in start", payload);
         this.setState({ loading: true });
         let resp = await login(payload);
-        this.setState({ loading: false });
+        console.log("resp");
         if (resp.data && resp.data.status) {
+            console.log("first");
+
             this.props.onLogin(resp.data.tokens, this.props.history);
+            this.setState({ loading: false });
         }
         if (resp.data && !resp.data.status) {
+            console.log("second");
+
             console.log("resp data", resp);
             console.log("resp data msg", resp.data.msg.msg[0]);
             this.setState({ errorMessage: resp.data.msg.msg[0] });
+            this.setState({ loading: false });
         }
+        console.log("outside");
+        this.setState({ loading: false });
     };
 
     render() {
@@ -38,7 +47,7 @@ class Login extends React.PureComponent {
                         onSubmit={this.doSignin}
                         errorMessage={this.state.errorMessage}
                     />
-                    <Loading show={this.state.loading} />
+                    {this.state.loading && <Loading />}
                 </div>
             </>
         );
