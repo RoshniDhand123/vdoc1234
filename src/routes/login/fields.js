@@ -2,10 +2,10 @@ import Field from "../../components/Field";
 
 export default [
   {
-    name: "email",
+      name: "contact",
     component: Field,
     placeholder: "Email",
-    type: "email",
+    type: "text",
     icon: "",
     required: true,
   },
