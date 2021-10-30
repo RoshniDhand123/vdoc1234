@@ -40,7 +40,7 @@ class RouteContainer extends React.PureComponent {
     onLogin = async (token, router) => {
         console.log("login");
         if (localStorage.getItem("checkCalling") !== null) {
-            // notifSuccess("", "Successfully logged in");
+            notifSuccess(success);
             saveUser(token);
             localStorage.removeItem("checkCalling");
             window.location.href = "/videoCalling";
@@ -49,13 +49,13 @@ class RouteContainer extends React.PureComponent {
             let { role } = parseToken(token);
             console.log(token);
             if (role === "User") {
-                // notifError("", CONSTANTS.REQ_PAYMENT);
+                notifError(error);
                 router.push({
                     pathname: path.BILLING,
                     state: { paymentPending: true, token },
                 });
             } else {
-                //  notifSuccess("", "Successfully logged in");
+                 notifSuccess("", "Successfully logged in");
                 console.log("login", role);
                 saveUser(token);
 

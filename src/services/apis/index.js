@@ -1,5 +1,7 @@
 import { Response, login_type, reset_pswd_type } from "./types";
-import { notifError } from "../../routes/util";
+
+import { notifError, notifSuccess } from "../../routes/util";
+import { notify } from "../../routes/util";
 import Request from "./request";
 import { Category } from "@material-ui/icons";
 
@@ -36,19 +38,16 @@ const Apis = {
 	PATIENT_COUNSELING_TIME: 'phy/counseling/time/',
 	CHAT_REQUEST: 'chat/room/patient/',
 };
-
 const verifyResponse = (resp) => {
 	try {
 		if (resp.data && !resp.data.status) {
 			let message;
 			if (resp.data?.msg.msg) message = resp.data.msg.msg[0];
 			else message = resp.data.msg;
-			console.log(message, typeof message)
-			if (message && typeof message === "string")
+			console.log(message, typeof message);
+			if (message)
 				notifError("", message || "Something went wrong");
-			else
-				notifError("", "Something went wrong");
-
+			else notifError("", "Something went wrong");
 		}
 	} catch (err) {
 		console.log("ERROR: ", err);

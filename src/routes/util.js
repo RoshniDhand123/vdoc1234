@@ -1,8 +1,5 @@
 import { store as notify } from "react-notifications-component";
 
-export const resetRouter = () => {
-	window.location.href = "/";
-};
 
 export const notifError = (title, message) => {
 	notify.addNotification({
@@ -51,6 +48,11 @@ export const notifWarning = (title, message) => {
 		},
 	});
 };
+
+export const resetRouter = () => {
+	window.location.href = "/";
+};
+
 
 export const verifyPassword = (value) => {
 	if (

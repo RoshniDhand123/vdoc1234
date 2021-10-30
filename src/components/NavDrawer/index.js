@@ -72,7 +72,7 @@ const NavDrawer = ({
         </Drawer>
         <div className={navContent}>
           <Switch>
-            {menu.map((route) =>
+          {menu && menu.map((route) =>
               route.children ? (
                 route.children.map((child) => (
                   <Route exact path={child.to} component={child.component} />
