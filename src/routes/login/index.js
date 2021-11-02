@@ -6,10 +6,11 @@ import AppLogo from "../../components/app-logo";
 import BigLogo from "../../assets/img/biglogo.png";
 import Vdoc from "../../assets/img/Vdoc-1-biglogo.png";
 import { login } from "../../services/apis";
+import{notifError,notifSuccess} from '../../routes/util';
 import "./style.scss";
 
 class Login extends React.PureComponent {
-    state = { loading: false, errorMessage: "" };
+    state = { loading: false };
 
     UNSAFE_componentWillMount() {
         if (this.props.userRole) window.location.href = "/";
@@ -24,6 +25,7 @@ class Login extends React.PureComponent {
             console.log("first");
 
             this.props.onLogin(resp.data.tokens, this.props.history);
+            notifSuccess("","SuccessFully LogIn");
             this.setState({ loading: false });
         }
         if (resp.data && !resp.data.status) {
@@ -31,7 +33,8 @@ class Login extends React.PureComponent {
 
             console.log("resp data", resp);
             console.log("resp data msg", resp.data.msg.msg[0]);
-            this.setState({ errorMessage: resp.data.msg.msg[0] });
+            // notifError("","Wrong Credentials");
+            // this.setState({ errorMessage: resp.data.msg.msg[0] });
             this.setState({ loading: false });
         }
         console.log("outside");
@@ -45,7 +48,7 @@ class Login extends React.PureComponent {
                     <AppLogo logo={Vdoc} className="app-logo big-logo" />
                     <LoginForm
                         onSubmit={this.doSignin}
-                        errorMessage={this.state.errorMessage}
+                      
                     />
                     {this.state.loading && <Loading />}
                 </div>

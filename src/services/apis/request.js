@@ -1,7 +1,7 @@
 import axios from "axios";
 // import * as storage from "../storage";
 
-// const BASE_URL = "http://45.79.127.100:8001/api/v1/";
+// const BASE_URL = "http://192.168.4.54:8001/api/v1/";
 
 const BASE_URL = "http://vdoc.ellocent.com/api/v1/";
 

@@ -1,7 +1,7 @@
 import { store as notify } from "react-notifications-component";
 
 
-export const notifError = (title, message) => {
+export const notifError = (title,message) => {
 	notify.addNotification({
 		title,
 		message,

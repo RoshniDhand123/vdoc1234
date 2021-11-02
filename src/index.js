@@ -3,10 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+import { Provider as AlertProvider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
 
 ReactDOM.render(
   <React.StrictMode>
+  <ReactNotification/>
+  <AlertProvider template={AlertTemplate}>
+  
+
     <App />
+    </AlertProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

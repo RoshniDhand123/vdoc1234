@@ -5,10 +5,13 @@ import {
     assignPhys,
     userChat,
 } from "../../../services/apis";
+import { notifWarning } from "../../util";
 import ChatScreen from "../chating-module/App";
 import "./style.css";
+import { useAlert } from 'react-alert';
 
 const Detail = (props) => {
+    const alert = useAlert();
     console.log("previous Report", props.prevReport);
     const [data, setReportData] = React.useState();
     const [previous, setPrevious] = React.useState(true);
@@ -16,6 +19,8 @@ const Detail = (props) => {
     const [specialityList, setSpecialityList] = useState();
     const [patientId, setPatientId] = useState(props.prevReport[0].Id);
     const [physSpeciality, setPhysSpeciality] = useState();
+    const[alertMessage,setalertMessage]=useState("");
+   
 
     console.log("hshhs", props);
     const getReportData = (e) => {
@@ -23,6 +28,7 @@ const Detail = (props) => {
         setReportData(e.target.value);
     };
     const handlePreviousFile = async () => {
+       
         //setPrevious(!previous);
         //console.log("props",props.prevReport)
         console.log("speclist+++++", specialityList, physSpeciality, patientId);
@@ -31,7 +37,16 @@ const Detail = (props) => {
             props.buttonAction("submitData");
             //props.getRequestList
         }
+        else{
+            notifWarning("","Please Choose Options First!");
+            
+           
+            // alert.show('Choose Options First');
+         
+           
+        }
     };
+   
 
     const handleChatClick = async () => {
         setPrevious(!previous);
@@ -73,6 +88,7 @@ const Detail = (props) => {
         });
 
     const show = (list) => {
+       
         console.log("LIST", list);
         return (
             <div className="outer-container">
@@ -108,6 +124,7 @@ const Detail = (props) => {
         );
     };
     return (
+        
         <div className="PatientDetailContainer">
             {previous ? (
                 <div className="previous-record">
@@ -140,14 +157,16 @@ const Detail = (props) => {
                         className="nurse btn buttonStyle"
                         onClick={handlePreviousFile}
                     />
-                ) : null}
+               ) : null}
                 {!previous ? (
                     <ButtonComponent
                         btnText="Back"
                         className="nurse btn buttonStyle"
                         onClick={handleBack}
                     />
-                ) : null}
+                  
+                )
+                 : null}
                 {previous ? (
                     <ButtonComponent
                         btnText="Chat"

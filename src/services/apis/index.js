@@ -24,7 +24,7 @@ const Apis = {
 	SET_APPOINTMENT: "appointment/booking",
 	USER_REQUEST: "list/patient",
 	PATIENT_REQUEST: "nurse/counseling/list",
-	PHYSICIAN_REQUEST:"list/physician",
+	PHYSICIAN_REQUEST: "list/physician",
 	PATIENT_LIST: "appointment/booking",
 	SET_ROOM_TOKEN: "appointment/call/video",
 	DELETE_PATIENTCALL: "appointment/call/video",
@@ -46,7 +46,7 @@ const verifyResponse = (resp) => {
 			else message = resp.data.msg;
 			console.log(message, typeof message);
 			if (message)
-				notifError("", message || "Something went wrong");
+				notifError("", message);
 			else notifError("", "Something went wrong");
 		}
 	} catch (err) {
@@ -56,30 +56,30 @@ const verifyResponse = (resp) => {
 	return resp;
 };
 
-export const assignPhys = async(id,speciality)=>{
-let resp = await Request.post(Apis.ASSIGN_REQUEST+id+'/'+speciality);
+export const assignPhys = async (id, speciality) => {
+	let resp = await Request.post(Apis.ASSIGN_REQUEST + id + '/' + speciality);
 }
 
-export const  userChat = async(id)=>{
-let resp = await Request.get(Apis.CHAT_REQUEST +id);	
+export const userChat = async (id) => {
+	let resp = await Request.get(Apis.CHAT_REQUEST + id);
 }
-export const getSpecialityList = async(category)=>{
-let resp = await Request.get(Apis.PHYSICIAN_SPECIALITY +category);
-console.log("specialityresponse",resp);
-return verifyResponse(resp);
-}
-
-
-export const getPhysicianInfo= async (id)=>{
-	let resp = await Request.get(Apis.PATIENT_COUNSELING_TIME +id);
+export const getSpecialityList = async (category) => {
+	let resp = await Request.get(Apis.PHYSICIAN_SPECIALITY + category);
+	console.log("specialityresponse", resp);
 	return verifyResponse(resp);
 }
 
 
-export const getPatientReport= async (id)=>{
-   let resp = await Request.get(Apis.PATIENT_REPORT_REQUEST +id);
-   console.log("patientRecord",resp);
-   return verifyResponse(resp);
+export const getPhysicianInfo = async (id) => {
+	let resp = await Request.get(Apis.PATIENT_COUNSELING_TIME + id);
+	return verifyResponse(resp);
+}
+
+
+export const getPatientReport = async (id) => {
+	let resp = await Request.get(Apis.PATIENT_REPORT_REQUEST + id);
+	console.log("patientRecord", resp);
+	return verifyResponse(resp);
 };
 
 export const getUserRequestList = async (page = "") => {
@@ -93,14 +93,14 @@ export const getUserRequestList = async (page = "") => {
 export const getPatientRequestList = async (page = "") => {
 	//console.log("hey enter");
 	let resp = await Request.get(Apis.PATIENT_REQUEST);
-	console.log("patientlist",resp);
+	console.log("patientlist", resp);
 	return verifyResponse(resp);
 };
 
 export const getPatientHistoryList = async (page = "") => {
 	//console.log("hey enter");
 	let resp = await Request.get(Apis.HISTORY_REQUEST);
-	console.log("patientlist",resp);
+	console.log("patientlist", resp);
 	return verifyResponse(resp);
 };
 
@@ -118,7 +118,7 @@ export const getTreatments = async () => {
 };
 
 export const getPlans = async (id) => {
-	let plans= await Request.get(Apis.GET_PLANS + id);
+	let plans = await Request.get(Apis.GET_PLANS + id);
 	return verifyResponse(plans);
 };
 
@@ -233,7 +233,7 @@ export const getParticularUserRecord = async (requestId) => {
 
 export const getPatientList = async (page = "") => {
 	let resp = await Request.get(Apis.PATIENT_LIST + page);
-	console.log("patientlist",resp);
+	console.log("patientlist", resp);
 	return verifyResponse(resp);
 };
 ///api/v1/appointment/patient/search?q=rk&field=name,email  ALLPATIENT_LIST: "/appointment/patient/search?q=",

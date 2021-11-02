@@ -15,6 +15,8 @@ import Detail from "./detail";
 import { PatientReportType } from "../patient-reports";
 import TableCmp from "../../../components/tableCmp";
 import { HeadCell } from "../../../components/tableCmp/type";
+import { notifSuccess } from "../../util";
+
 
 const headCells = [
     { name: "Id", label: "ID" },
@@ -28,6 +30,7 @@ const headCells = [
 ];
 
 class PatientList extends React.PureComponent {
+   
     state = {
         loading: true,
         details: [],
@@ -41,6 +44,7 @@ class PatientList extends React.PureComponent {
     }
 
     getRequestList = async () => {
+       
         let resp = await getPatientRequestList();
         //console.log(resp,"heyyyyyyyyy");
         let button = [
@@ -63,6 +67,7 @@ class PatientList extends React.PureComponent {
     };
 
     getUserRecord = async (row) => {
+        // notifSuccess("","Nurse Can view Patient Detail");
         console.log("row", row);
         // let patient_id = row['Id'];
         //console.log("p_id",patient_id);
